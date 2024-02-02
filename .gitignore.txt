@@ -1,0 +1,5 @@
+new_folder/ 
+venv/ 
+idea/ 
+.gitignore.txt 
+requirements.txt 
