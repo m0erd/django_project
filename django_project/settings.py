@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k(_k6wk0280)a88=p!z2(1oz)adxq%q%h!ir=_fripci8_eeyw'
+# SECRET_KEY = 'django-insecure-k(_k6wk0280)a88=p!z2(1oz)adxq%q%h!ir=_fripci8_eeyw'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost", "blogwithdjango-de21cf8dea87.herokuapp.com"]
 
 
 # Application definition
@@ -156,5 +157,5 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "m0erdx@gmail.com"
-EMAIL_HOST_PASSWORD = "hxrk pbgw qaaq ilma "
+EMAIL_HOST_USER = os.environ.get("DB_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("DB_PASS")
