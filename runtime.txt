@@ -1,2 +1,2 @@
 python-3.8.10
-heroku-22
+heroku-20
