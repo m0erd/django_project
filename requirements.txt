@@ -16,7 +16,6 @@ distlib==0.3.8
 dj-database-url==2.1.0
 Django==4.2.1
 django-crispy-forms==2.0
-django-heroku==0.3.1
 docker==7.0.0
 filelock==3.13.1
 Flask==3.0.1
