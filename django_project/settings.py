@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,8 +92,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "railway",
         'USER': "postgres",
-        'PASSWORD': "Aagef2e4eggCBCfG-2DfeBgcffCE6A6C",
-        'HOST': "monorail.proxy.rlwy.net",
+        'PASSWORD': os.environ.get("POSTGRESQL_PASS"),
+        'HOST': os.environ.get("POSTGRESQL_HOST"),
         'PORT': "34495",
 
     }
@@ -157,3 +158,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get("DB_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("DB_PASS")
+
+django_heroku.setting(locals())
